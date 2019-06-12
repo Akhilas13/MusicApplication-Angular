@@ -1,0 +1,35 @@
+ <div class="container">
+    <p class="lead" ></p>
+     </div>
+
+     <form>
+      <div class="form-row">
+        <div id="mysearch" class="col-lg-3">
+          <input #text type="text" class="form-control" placeholder="Search for Songs, Artists">
+        </div>
+          <button type="button" class="btn btn-danger" (click)="click(text.value)">Search</button>
+       </div>
+       </form>
+
+       
+          <div class="container-fluid d-flex flex-wrap my-2">
+            <div class="card col-sm-12 col-md-4 col-lg-3" style="width: 18rem;" *ngFor="let music of arrayOfMusic">
+              
+              <div class="card-body">
+                <h5 class="card-title"> NAME : {{music.name}}</h5>
+              </div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item"> ARTIST : {{music.artist.name}}</li>
+              </ul>
+              <ul class="list-group list-group-flush">
+                  <li class="list-group-item"> MUSIC-URL : {{music.url}}</li>
+                </ul>
+
+
+              <div class="card-body">
+                 <button class="btn btn-outline-danger mx-2" (click)="clickToAdd(music)" > ADD </button>
+                 <button class="btn btn-outline-danger mx-2" (click)="details(music)"> DETAILS </button> 
+         
+              </div>
+            </div>
+          </div>
